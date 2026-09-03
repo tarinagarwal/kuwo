@@ -4,6 +4,9 @@ flow.md
 tech.md
 docs/
 
+# local reference copy of another buildathon entry — never commit
+AgentPay/
+
 node_modules/
 dist/
 .env
