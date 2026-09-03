@@ -18,7 +18,8 @@ Razorpay has shipped consent-based agentic payments (UPI Reserve Pay spending li
 
 ## Status
 
-🚧 Layer 0 — validating the Razorpay test-mode payment leg (`pnpm probe:f0`). Findings land in the "What broke" table below.
+✅ Layer 0 — payment leg validated on Razorpay test mode (`pnpm probe:f0`): orders + capture work; the S2S gap and our answer to it are in the "What broke" table below.
+🚧 Layer 1 — building the core: signed mandates, two-stage gate, payment executor, audit trail.
 
 ## Quickstart
 
@@ -34,4 +35,4 @@ Honest, running list of what failed during the build and how we handled it. Star
 
 | # | What broke | How we handled it |
 |---|---|---|
-| — | *(nothing yet)* | |
+| 1 | The S2S JSON payment API (`POST /v1/payments/create/json`) returns 404 on a fresh test account — the fully-headless server-to-server flow is feature-gated, so there is no pure-API path to a `captured` payment | Payment executor creates the order via API, drives Razorpay's own checkout page with Playwright + the documented test card to produce a real `authorized` payment, then captures via `POST /v1/payments/:id/capture` and polls until `captured` is confirmed. Nothing mocked — the probe (`pnpm probe:f0`) reproduces the finding |
