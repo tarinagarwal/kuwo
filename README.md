@@ -16,15 +16,9 @@ Razorpay has shipped consent-based agentic payments (UPI Reserve Pay spending li
 4. **Dispute-grade evidence packs** — the audit trail made load-bearing: cryptographic proof of who authorized what, ready for a chargeback response.
 5. **Concurrency-safe money code** — reserve→commit budget transactions, idempotency keys on payment retries.
 
-## Project docs
-
-- [features.md](features.md) — every feature, in build-order layers
-- [flow.md](flow.md) — step-by-step flows (setup, happy path, attack ladder)
-- [tech.md](tech.md) — stack and the principles behind it
-
 ## Status
 
-🚧 Layer 0 — validating the Razorpay test-mode payment leg (`pnpm probe:f0`). Findings land in [docs/f0-findings.md](docs/f0-findings.md).
+🚧 Layer 0 — validating the Razorpay test-mode payment leg (`pnpm probe:f0`). Findings land in the "What broke" table below.
 
 ## Quickstart
 

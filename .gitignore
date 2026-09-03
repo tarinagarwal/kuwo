@@ -1,3 +1,9 @@
+# local planning docs — not part of the public repo
+features.md
+flow.md
+tech.md
+docs/
+
 node_modules/
 dist/
 .env
