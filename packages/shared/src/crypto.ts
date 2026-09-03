@@ -15,6 +15,8 @@ import {
   type OfferPayload,
 } from "./schemas.js";
 
+export type { JWK } from "jose";
+
 /** AP2 signs mandates with ES256 (ECDSA P-256); we follow the spec. */
 export const ALG = "ES256";
 

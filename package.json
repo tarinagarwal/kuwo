@@ -4,9 +4,17 @@
   "private": true,
   "description": "Kuwo — intent-bound agentic commerce gateway on Razorpay. The AI that judges is not the AI that shops.",
   "scripts": {
-    "probe:f0": "tsx scripts/f0-payment-probe.ts"
+    "probe:f0": "tsx scripts/f0-payment-probe.ts",
+    "test": "pnpm -r --if-present test",
+    "typecheck": "pnpm -r --if-present typecheck"
   },
   "packageManager": "pnpm@10.15.1",
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "better-sqlite3",
+      "esbuild"
+    ]
+  },
   "devDependencies": {
     "@types/node": "^26.4.1",
     "dotenv": "^17.4.2",
